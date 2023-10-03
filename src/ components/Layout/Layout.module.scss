@@ -1,0 +1,11 @@
+.float_button {
+    display: none;
+
+    @media (min-width: 992px) {
+        display: block;
+        width: 58px;
+        height: 58px;
+        left: 50px;
+        background-color: "#EE771C";
+    }
+}

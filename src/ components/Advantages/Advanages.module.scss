@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    flex-direction: column; 
+    @media(min-width: 992px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+.wrapper img{
+    @media(min-width: 992px) {
+        max-width: 852px;
+        height: auto;
+        margin-bottom: 20px;
+    
+    }
+
+    
+}
+

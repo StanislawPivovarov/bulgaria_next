@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "Bebas Neue Thin";
+    src: url("../assets/fonts/BebasNeue/BebasNeue-Thin.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Bebas Neue Bold";
+    src: url("../assets/fonts/BebasNeue/BebasNeueBold.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Bebas Neue Book";
+    src: url("../assets/fonts/BebasNeue/BebasNeueBook.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Bebas Neue Light";
+    src: url("../assets/fonts/BebasNeue/BebasNeueLight.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Bebas Neue Regular";
+    src: url("../assets/fonts/BebasNeue/BebasNeueRegular.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "CenturyGothic Bold";
+    src: url("../assets/fonts/CenturyGothic/CenturyGothic-Bold.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "CenturyGothic Bold Italic";
+    src: url("../assets/fonts/CenturyGothic/CenturyGothic-BoldItalic.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "CenturyGothic Italic";
+    src: url("../assets/fonts/CenturyGothic/CenturyGothic-Italic.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "CenturyGothic";
+    src: url("../assets/fonts/CenturyGothic/CenturyGothic.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "VeryBerry";
+    src: url("../assets/fonts/VeryBerryPro-Regular.woff") format("woff");
+    font-weight: normal;
+}

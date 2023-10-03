@@ -1,0 +1,22 @@
+.back {
+    background: linear-gradient(180deg, #EBF6FB 0%, #C1E5FA 100%);
+    padding-top: 140px;
+    padding-bottom: 230px;
+    height: max-content;
+}
+
+.header {
+    color: #244360;
+text-align: center;
+font-family: Bebas Neue Regular;
+font-size: 56px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;
+margin-bottom: 30px;
+@media(max-width: 991px) {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+}

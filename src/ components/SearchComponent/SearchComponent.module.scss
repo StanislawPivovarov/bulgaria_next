@@ -1,0 +1,87 @@
+.searchBar {
+    height: 100%;
+    padding: 0 30px;
+    color: #6885A1;
+    font-family: CenturyGothic;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.40);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 80px;
+    @media(max-width: 991px) {
+        height: 50px;
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+
+.searchBar input {
+    font-family: CenturyGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.prefix {
+    padding-right: 10px;
+    font-size: 24px;
+}
+
+.suffix {
+    font-size: 24px;
+}
+
+.suffix_button {
+    color: #6885A1 !important;
+}
+
+.results_count {
+    text-align: start;
+    margin-top: 40px;
+    color: #244360;
+    font-family: CenturyGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 40px;
+}
+
+.results_list {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 40px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.results_ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result_header {
+    text-align: start;
+    margin-bottom: 10px;
+    color: #0358A3;
+    font-family: CenturyGothic;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.result_content {
+    text-align: start;
+    color: #244360;
+    font-family: CenturyGothic;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+

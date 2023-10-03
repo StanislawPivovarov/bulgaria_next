@@ -1,0 +1,41 @@
+.back {
+    background: linear-gradient(180deg, #EBF6FB 100%, #C1E5FA 0%);
+    position: relative;
+    padding-top: 64px;
+    padding-bottom: 60px;
+    max-width: 100%;
+
+}
+
+.back_img {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.header {
+    font-family: Bebas Neue Regular;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;
+z-index: 10;
+position: relative;
+color: #244360;
+margin-bottom: 10px;
+@media (min-width: 992px) {
+    font-size: 56px;
+    margin-bottom: 40px;
+}
+}
+
+.component_wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+.rev {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,95 @@
+.header {
+    height: 216px;
+    background-color: #fff;
+
+    @media(min-width: 320px) {
+        height: auto
+    }
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+
+    @media(min-width: 992px) {
+        width: 500px;
+        height: auto;
+    }
+}
+
+.logo_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8px;
+    align-items: center;
+
+    @media(min-width: 992px) {
+        display: block;
+    }
+}
+
+.header_content {
+    flex-direction: column;
+
+    @media(min-width: 992px) {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        align-items: center;
+        height: 100%;
+        flex-direction: row;
+    }
+}
+
+.contact_ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+
+    @media(min-width: 992px) {
+        text-align: end;
+    }
+}
+
+.contact_link {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'CenturyGothic Bold';
+    color: #134B80;
+
+    @media (min-width: 992px) {
+        justify-content: flex-end;
+        font-size: 20px;
+    }
+}
+
+.contact_li {
+    margin-bottom: 15px;
+}
+
+.menu_button {
+    @media(min-width: 992px) {
+        display: none;
+    }
+}
+
+.drawer_content {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 32px 64px 32px;
+}
+
+.drawer_content a {
+    text-align: start;
+    color: #C1E5FA !important;
+    height: 48px;
+    font-family: CenturyGothic;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}

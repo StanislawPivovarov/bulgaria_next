@@ -1,0 +1,80 @@
+.back {
+    width: 100%;
+    background: var(--cerulean-dark-cerulean, linear-gradient(180deg, #016794 0%, #134B80 100%));
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.header {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Bebas Neue Regular, sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    @media (min-width: 992px) {
+        font-size: 56px;
+    }
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.carousel img {
+    animation: slide 5000ms infinite linear;
+    animation-iteration-count: infinite;
+}
+
+.image {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    animation: ease-in-out 0.5s;
+    transition: scale 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+.image:hover {
+    scale: 1.1;
+}
+
+.portfolio_link {
+    color: #FFF;
+    text-decoration: none;
+    color: #C1E5FA;
+    text-align: center;
+    font-family: CenturyGothic, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @media (min-width: 992px) {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-160%, 0);
+    }
+}
+
+.image_container {
+    overflow: hidden;
+    height: 240px;
+}
+
+.marquee {
+    overflow: hidden;
+}

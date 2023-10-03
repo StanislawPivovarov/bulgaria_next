@@ -1,0 +1,78 @@
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.popup {
+width: 100%;
+top: 0;
+margin: 0 !important;
+    @media(min-width: 992px) {
+
+    padding: 0 !important;
+    position: relative;
+    width: 60% !important;
+    margin-bottom: 100px !important;
+    top: 20px !important;
+}
+    
+}
+
+.popup_content {
+    padding: 0 40px;
+}
+
+.popup_content h1 {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #244360;
+    font-family: Bebas Neue Regular;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.description {
+    color: #244360;
+    font-family: CenturyGothic;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.link p {
+    color: #244360;
+    font-family: CenturyGothic;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-right: 20px;
+}
+
+.link button {
+    height: 39px;
+    padding: 0px 20px;
+    justify-content: center;
+    align-items: center;
+    color: #EE771C;
+    border: 1px solid #EE771C;
+    border-radius: 20px;
+    text-align: center;
+    font-family: CenturyGothic;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

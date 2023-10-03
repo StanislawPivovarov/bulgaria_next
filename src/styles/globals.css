@@ -1,3 +1,5 @@
+@import url('./fonts.css');
+@import url('https://cdn.envybox.io/widget/cbk.css');
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -104,4 +106,35 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.ant-drawer-header-title {
+  flex-direction: row-reverse !important;
+}
+
+.ant-drawer-title {
+  text-align: center;
+  font-family: CenturyGothic;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal
+}
+
+.ant-drawer-header {
+  padding: 19 auto;
+}
+
+.ant-drawer-close {
+  margin: 0 !important;
+}
+
+.ant-drawer-body {
+  background-color: #134B80 !important;
+  padding: 0 !important;
+}
+
+.ant-modal-content {
+  padding: 0px !important;
+  padding-bottom: 40px !important;
 }
