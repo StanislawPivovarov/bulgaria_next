@@ -20,6 +20,7 @@ const Search = ({ data }: any) => {
 
   //     fetchData();
   // }, [setData]);
+  
   console.log('fefe', data)
   return (
     <div className={style.back}>

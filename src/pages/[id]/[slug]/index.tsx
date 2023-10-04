@@ -138,20 +138,18 @@ export async function getStaticPaths() {
     const fetch = await axios.get(`http://127.0.0.1:1337/api/categories?populate=*`);
     const result = fetch.data;
 
-    const paths = result.data.flatMap((res: { attributes: { product_categories: any; }; id: { toString: () => any; }; }) => {
-      const productCategories = Array.isArray(res.attributes.product_categories)
-        ? res.attributes.product_categories
-        : [];
+    let paths: any[] = [];  // Объявляем paths здесь
+    result.data.forEach((res: { attributes: { product_categories: any; }; id: { toString: () => any; }; }) => {
+      const productCategories = res.attributes.product_categories.data
 
-      return productCategories.map((category: { id: { toString: () => any; }; }) => {
-        const categoryId = category.id ? category.id.toString() : '';
-        console.log(res.id, categoryId)
-        return {
-          params: { id: res.id.toString(), slug: categoryId },
-        };
-      });
+      paths = [
+        ...paths,
+        ...productCategories.map((category: { id: { toString: () => any; }; }) => ({
+          params: { id: res.id.toString(), slug: category.id.toString() },
+        })),
+      ];
     });
-
+    console.log(paths)
     return {
       paths,
       fallback: true,

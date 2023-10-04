@@ -109,7 +109,7 @@ export async function getStaticPaths() {
       const paths = result.data.map((res: { id: any }) => ({
         params: { id: res.id.toString() },  // <-- Add parentheses here
       }));
-  
+      console.log("fffff",paths)
       // Возвращаем массив путей и опцию fallback
       return {
         paths,

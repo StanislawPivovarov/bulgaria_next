@@ -9,12 +9,12 @@ import getPortfolio from "../../../api/getPortfolio/getPortfolio";
 import Image from "next/image";
 
 
-const PortfolioMain = () => {
+const PortfolioMain = ({response}:any) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [data, setData] = useState<any>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [modalData, setModalData] = useState<any>(null);
-
+    console.log(response)
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -31,7 +31,6 @@ const PortfolioMain = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await getPortfolio();
                 setData(response);
 
             } catch (error) {

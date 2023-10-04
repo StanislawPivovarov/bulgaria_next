@@ -3,6 +3,7 @@ import Fuse from 'fuse.js';
 import { SearchOutlined, CloseOutlined } from '@ant-design/icons';
 import { Input, Button, Spin } from 'antd';
 import style from './SearchComponent.module.scss'
+import Link from 'next/link';
 
 const   SearchComponent = ({ dataFromApi }: any) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -80,10 +81,10 @@ const   SearchComponent = ({ dataFromApi }: any) => {
                     <ul className={style.results_ul}>
                         {searchResults.map((result: any, index: React.Key | null | undefined) => (
                             <li className={style.results_list} key={index}>
-                                <a href={`/${result.id}`}>
+                                <Link href={`/${result.id}`}>
                                     <p className={style.result_header}>{result.attributes.name}</p>
                                     <p className={style.result_content}>{result.attributes.description}</p>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>

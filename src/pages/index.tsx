@@ -13,7 +13,7 @@ import axios from 'axios'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({data}:any) {
+export default function Home({data, portfolio}:any) {
   console.log(data)
   return (
     <ConfigProvider
@@ -26,8 +26,8 @@ export default function Home({data}:any) {
     >
       <StyleProvider>
         <Sales />
-        <ProductMenu />
-        <PortfolioMain />
+        <ProductMenu fetchedData={data} />
+        <PortfolioMain response={portfolio} />
         <Partners />
         <Reviews />
       </StyleProvider>
@@ -37,10 +37,13 @@ export default function Home({data}:any) {
 
 export async function getStaticProps() {
   const response = await axios.get(`http://127.0.0.1:1337/api/categories/?populate=*`);
-  const data = response.data;
+  const responsePortfolio = await axios.get(`http://127.0.0.1:1337/api/portfolios?populate[product_category][populate][0]=direction`)
+  const data = response.data.data;
+  const portfolio = responsePortfolio.data.data
   return {
     props: {
-      data: data
+      data: data,
+      portfolio:portfolio
     },
   };
 }

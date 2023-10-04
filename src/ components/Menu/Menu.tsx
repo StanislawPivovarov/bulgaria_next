@@ -6,6 +6,10 @@ import Fuse from "fuse.js";
 import getCategories from "../../api/getCategories/getCategories";
 import Link from "next/link";
 import axios from "axios";
+import path from "path";
+import {menu} from '../../helpers/categories'
+
+
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
@@ -20,21 +24,22 @@ const Menu = () => {
 
 
 
-  const [menu, setMenu] = useState<any[]>([]);
+  // const [menu, setMenu] = useState<any[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getCategories();
-        setMenu(data);
-      } catch (error) {
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const data = await getCategories();
+  //       setMenu(data);
+  //     } catch (error) {
 
-      }
-    };
+  //     }
+  //   };
 
-    fetchData();
-  }, [setMenu]);
+  //   fetchData();
+  // }, [setMenu]);
 
+  
 
   const items: MenuProps['items'] = [
     {
@@ -125,16 +130,16 @@ const Menu = () => {
                 )
                 return (
                   <Dropdown key={items.id} menu={{ items: menuItems }}>
-                    <Button href={`/${items.id}`} className={style.button} type="link">{items.attributes.name}</Button>
+                    <Link href={`/${items.id}`} className={style.button} type="link">{items.attributes.name}</Link>
                   </Dropdown>
                 )
               }
               )
 
             }
-            <Button href="/search" className={style.button} type="link">
+            <Link href="/search" className={style.button} type="link">
               <SearchOutlined />
-              Поиск</Button>
+              Поиск</Link>
           </div>
 
         </Col>
@@ -147,12 +152,12 @@ const Menu = () => {
 export default Menu;
 
 
-export async function getStaticProps() {
-  const response = await axios.get(`http://127.0.0.1:1337/api/categories/?populate=*`);
-  console.log(response.data.data)
-  return {
-    props: {
-      data: response.data
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const response = await axios.get(`http://127.0.0.1:1337/api/categories/?populate=*`);
+//   console.log(response.data.data)
+//   return {
+//     props: {
+//       data: response.data
+//     },
+//   };
+// }

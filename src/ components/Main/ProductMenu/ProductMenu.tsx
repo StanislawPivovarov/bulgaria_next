@@ -4,7 +4,7 @@ import { Button, Col, Row, Spin } from "antd";
 import ProductCard from "../ProductCard";
 import getCategories from "../../../api/getCategories/getCategories";
 
-const ProductMenu = () => {
+const ProductMenu = ({fetchedData}:any) => {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState();
     const [isData, setIsData] = useState<any>([]);
@@ -13,7 +13,6 @@ const ProductMenu = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const fetchedData = await getCategories();
                 setData(fetchedData);
                 setIsData(getRandomCards(fetchedData));
             } catch (error) {

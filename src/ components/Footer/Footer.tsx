@@ -7,24 +7,8 @@ import { FaMapMarkerAlt } from 'react-icons/fa'
 import axios from "axios";
 import getCategories from "../../api/getCategories/getCategories";
 import Link from "next/link";
-
+import {menu} from '../../helpers/categories'
 const Footer = () => {
-    const [menu, setMenu] = useState<any[]>([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await getCategories();
-                setMenu(data);
-            } catch (error) {
-
-            }
-        };
-
-        fetchData();
-    }, [setMenu]);
-
-
 
     // console.log(menu)
     if (!!menu.length) {
