@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import test from '../../assets/popup/56d9edc0508af5327e71c157f85c3570.jpeg'
 import style from './PopUp.module.scss'
 import Image from "next/image";
+import { ExportOutlined } from "@ant-design/icons";
 
 const PopUp = (props:any) => {
 
@@ -26,7 +27,7 @@ const PopUp = (props:any) => {
                     <p className={style.description}>{props.description}</p>
                     <div className={style.link}>
                         <p>Товар:</p>
-                        <Button href={`/${props.category_id}/${props.product_category_id}`} type="default">{props.category}</Button>
+                        <Button href={`/${props.category_id}/${props.product_category_id}`} className={style.button} type="primary">{props.category} <ExportOutlined /></Button>
                     </div>
                 </div>
             </Modal>

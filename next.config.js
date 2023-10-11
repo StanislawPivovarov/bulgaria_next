@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const path = require('path')
 const nextConfig = {
-  basePath: '/bulgaria_next',
-  assetPrefix: '/bulgaria_next/',
-  output: 'export',
-  reactStrictMode: true,
-  distDir: 'build',
+  // basePath: '/bulgaria_next',
+  // assetPrefix: '/bulgaria_next/',
+  // output: 'export',
+  // reactStrictMode: true,
+  // distDir: 'build',
   images: {
     unoptimized: true,
     domains: ['i.postimg.cc'],

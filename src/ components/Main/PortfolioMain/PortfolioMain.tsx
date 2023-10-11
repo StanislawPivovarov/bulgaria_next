@@ -27,6 +27,7 @@ const PortfolioMain = ({response}:any) => {
         setIsModalOpen(false);
     };
 
+    console.log('949949',modalData)
     // console.log(modalData)
     useEffect(() => {
         const fetchData = async () => {
@@ -40,12 +41,13 @@ const PortfolioMain = ({response}:any) => {
             }
 
         };
-
         fetchData();
     }, []);
     if (isLoading) {
         return <p>Loading</p>
     }
+
+    console.log(data)
     return (
         <div className={style.back}>
             <h2 className={style.header}>Портфолио</h2>
