@@ -18,6 +18,7 @@ import axios from "axios";
 
 
 const Product = ({ data }:any) => {
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);

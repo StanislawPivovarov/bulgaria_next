@@ -66,7 +66,7 @@ const Portfolio = ({data}:any) => {
                                 attributes: any; id: React.Key | null | undefined; imageUrl: string | undefined;
                             }) => (
                                 <Button onClick={() => { setModalData(item); showModal(); }} key={item.id} className={style.image_container}>
-                                    <Image width={500} height={500} src={item.attributes.image} className={style.img_big} alt="" />
+                                    <Image width={1000} height={1000} src={item.attributes.image} className={style.img_big} alt="" />
                                 </Button>
                             ))}
                         </div>
@@ -116,7 +116,7 @@ export default Portfolio;
 
 export async function getStaticProps() {
     const response = await axios.get(`http://127.0.0.1:1337/api/portfolios?populate[product_category][populate][0]=direction`);
-    console.log(response.data.data)
+    // console.log(response.data.data)
     return {
       props: {
         data: response.data.data

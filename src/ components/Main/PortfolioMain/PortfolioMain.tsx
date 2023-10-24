@@ -7,6 +7,7 @@ import Marquee from "react-fast-marquee";
 import PopUp from "../../PopUp";
 import getPortfolio from "../../../api/getPortfolio/getPortfolio";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const PortfolioMain = ({response}:any) => {
@@ -14,7 +15,6 @@ const PortfolioMain = ({response}:any) => {
     const [data, setData] = useState<any>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [modalData, setModalData] = useState<any>(null);
-    console.log(response)
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -27,8 +27,6 @@ const PortfolioMain = ({response}:any) => {
         setIsModalOpen(false);
     };
 
-    console.log('949949',modalData)
-    // console.log(modalData)
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -47,7 +45,6 @@ const PortfolioMain = ({response}:any) => {
         return <p>Loading</p>
     }
 
-    console.log(data)
     return (
         <div className={style.back}>
             <h2 className={style.header}>Портфолио</h2>
@@ -80,7 +77,7 @@ const PortfolioMain = ({response}:any) => {
 
             )
             }
-            <Button type="link" className={style.portfolio_link} href="/portfolio">Смотреть все работы <RightOutlined /></Button>
+            <Link type="link" className={style.portfolio_link} href="/portfolio">Смотреть все работы <RightOutlined /></Link>
         </div>
     )
 }

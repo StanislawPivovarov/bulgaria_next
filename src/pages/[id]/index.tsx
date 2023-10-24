@@ -44,19 +44,20 @@ const Directions = ({data}:any) => {
     // console.log("shit", data)
 
 
-    // console.log(data)
+    console.log(data)
+
     return (
         <div className={style.back}>
             <Row justify={'center'} style={{ paddingBottom: 50 }}>
                 <Col xs={24} lg={20}>
                     <div className={style.content}>
-                        <h2 className={style.header}>{data?.name}</h2>
+                        <h2 className={style.header}>{data?.attributes.name}</h2>
                         <div className={style.description_position}>
                             <Image width={500} height={500} className={style.cover} src={cover} alt="" />
                             <div className={style.description}>
 
                                 <Markdown className={style.markdown}>
-                                    {data?.description}
+                                    {data?.attributes.description}
                                 </Markdown>
 
                             </div>
@@ -68,7 +69,7 @@ const Directions = ({data}:any) => {
                             <div className={style.description}>
 
                                 <Markdown className={style.markdown}>
-                                    {data?.technologies}
+                                    {data?.attributes.technologies}
                                 </Markdown>
 
                             </div>
@@ -76,8 +77,9 @@ const Directions = ({data}:any) => {
                         <PrimaryHeader className={style.tech} header="Виды продукции" />
                         <div className={style.products}>
                             {
-                                data?.product_categories?.data.map((item: {
-                                    id: | null | undefined; attributes: { name: any; description: any };
+                                data?.attributes.product_categories?.data.map((item: {
+                                     id: any;
+                                     attributes: { name: any; description: any };
                                 }): any => (
                                     <Link key={item.id} className={style.button_to} href={`/${data.id}/${item.id}`}>
                                         <ProductCard
@@ -109,7 +111,7 @@ export async function getStaticPaths() {
       const paths = result.data.map((res: { id: any }) => ({
         params: { id: res.id.toString() },  // <-- Add parentheses here
       }));
-      console.log("fffff",paths)
+      // console.log("fffff",paths)
       // Возвращаем массив путей и опцию fallback
       return {
         paths,
@@ -120,18 +122,21 @@ export async function getStaticPaths() {
       throw error;
     }
   }
+
   
   // Эта функция будет вызвана для каждого пути, указанного в getStaticPaths
   export async function getStaticProps({ params }: any) {
     try {
       const { id } = params;
+      // console.log(params)
+    
       // Получите данные для конкретного направления
       const response = await axios.get(`http://127.0.0.1:1337/api/categories/${id}/?populate=*`);
   
       // Возвращаем данные как props для компонента Directions
       return {
         props: {
-          data: response.data.data.attributes,  // <-- Access response.data
+          data: response.data.data  // <-- Access response.data
         },
       };
     } catch (error) {

@@ -12,7 +12,7 @@ const Sales = () => {
     return (
         <Carousel autoplay>
             <div className={style.content}>
-                <div>
+                <div className={style.content_inner}>
                     <Image unoptimized  className={style.back} src={back} alt="" />
                     <div className={style.content_filling}>
                         <Row justify={"center"}>

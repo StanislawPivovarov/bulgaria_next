@@ -39,6 +39,7 @@
 
 .img_big {
     width: 100%;
+    height: 100%;
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 0;
@@ -57,7 +58,8 @@
 }
 
 .images {
-    width: 100%
+    width: 100%;
+    height: 100%;
 }
 
 .first_line {
@@ -83,7 +85,7 @@
 .image_container {
     width:fit-content;
     overflow: hidden;
-    padding: 0;
+    padding: 0 !important;
     border: 0 !important;
     border-radius: 0 !important;
     height: auto;

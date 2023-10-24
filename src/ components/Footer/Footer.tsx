@@ -10,7 +10,6 @@ import Link from "next/link";
 import {menu} from '../../helpers/categories'
 const Footer = () => {
 
-    // console.log(menu)
     if (!!menu.length) {
 
         return (

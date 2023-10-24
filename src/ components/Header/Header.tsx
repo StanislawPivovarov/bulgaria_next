@@ -26,9 +26,9 @@ const Header = () => {
                 <Col xs={22} lg={20}>
                     <div className={style.header_content}>
                         <div className={style.logo_content}>
-                            <Button className={style.logo} href="/" type="link">
+                            <Link className={style.logo} href="/" type="link">
                             <Image  className={style.logo} src={logo} alt="logo" />
-                            </Button>
+                            </Link>
  
                             <Button type="link" onClick={showDrawer} className={style.menu_button}><MenuOutlined style={{ fontSize: 20 }} /></Button>
                         </div>
@@ -60,21 +60,20 @@ const Header = () => {
             </Row>
             <Drawer title="Меню" height={"100vh"} placement="top" onClose={onClose} open={open}>
                 <div className={style.drawer_content}>
-                    <Button href="/search" type="link">Поиск</Button>
+                    <Link onClick={()=> setOpen(false)} href="/search" type="link">Поиск</Link>
                     <Divider style={{ background: "transparent", margin: "8px 0" }} />
-                    <Button href="/sales" type="link">Акции</Button>
-                    <Button href="/portfolio" type="link">Портфолио</Button>
-                    <Button href="/reviews" type="link">Отзывы</Button>
-                    <Button href="/about" type="link">О нас</Button>
-                    <Button href="/contacts" type="link">Контакты</Button>
-                    <Button href="/glossary"type="link">Словарь</Button>
+                    <Link onClick={()=> setOpen(false)} href="/sales" type="link">Акции</Link>
+                    <Link onClick={()=> setOpen(false)} href="/portfolio" type="link">Портфолио</Link>
+                    <Link onClick={()=> setOpen(false)} href="/reviews" type="link">Отзывы</Link>
+                    <Link onClick={()=> setOpen(false)} href="/about" type="link">О нас</Link>
+                    <Link onClick={()=> setOpen(false)} href="/contacts" type="link">Контакты</Link>
+                    <Link onClick={()=> setOpen(false)} href="/glossary"type="link">Словарь</Link>
                     <Divider style={{ background: "transparent", margin: "8px 0" }} />
-                    <Button href="/1" type="link">Печати и штампы</Button>
-                    <Button href="/2" type="link">Лазерная гравировка</Button>
-                    <Button href="/3"type="link">Полиграфия</Button>
-                    <Button href="/4" type="link">Собственное производство</Button>
+                    <Link onClick={()=> setOpen(false)} href="/1" type="link">Печати и штампы</Link>
+                    <Link onClick={()=> setOpen(false)} href="/2" type="link">Лазерная гравировка</Link>
+                    <Link onClick={()=> setOpen(false)} href="/3"type="link">Полиграфия</Link>
+                    <Link onClick={()=> setOpen(false)} href="/4" type="link">Собственное производство</Link>
                 </div>
-
             </Drawer>
 
         </div>
