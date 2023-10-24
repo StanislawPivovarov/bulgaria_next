@@ -38,7 +38,7 @@ const Header = () => {
                                 <li className={style.contact_li}>
                                     <Link className={style.contact_link} href="tel:88432777633">
                                         <AiFillPhone style={{ marginRight: 10 }} />
-                                        8 (843) 277-76-33
+                                        +7 (843) 277-76-33
                                     </Link>
                                 </li>
                                 <li className={style.contact_li}>

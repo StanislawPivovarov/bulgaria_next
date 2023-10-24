@@ -2,6 +2,25 @@
     background-color: #EBF6FB;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 24px;
+    grid-row-gap: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    @media(min-width: 992px) {
+        grid-template-columns: auto auto auto auto;
+        grid-column-gap: 32px;
+        grid-row-gap: 40px;
+        margin-top: 50px;
+    }
+
+}
+
 .header {
     color: #244360;
     text-align: center;

@@ -57,11 +57,11 @@ const Contacts = () => {
                     </a>
                     <a href="tel:88432777633">
                         <AiFillPhone className={style.icon} />
-                        <p className={style.contacts_content_link}>8 (843) 277-76-33</p>
+                        <p className={style.contacts_content_link}>+7 (843) 277-76-33</p>
                     </a>
                     <a href="https://api.whatsapp.com/send?phone=88432777633" target="_blank">
                         <RiWhatsappFill className={style.icon} />
-                        <p className={style.contacts_content_link}>8 (843) 277-76-33</p>
+                        <p className={style.contacts_content_link}>+7 (843) 277-76-33</p>
                     </a>
                     <a href="mailto:1@gbkzn.ru" target="_blank">
                         <AiFillMail className={style.icon} />

@@ -5,6 +5,7 @@ import logo from '../../assets/logoBig.png'
 import Partners from "@/ components/Main/Partners";
 import PortfolioMain from "@/ components/Main/PortfolioMain";
 import Image from "next/image";
+import test from "@/assets/test_partners.png"
 
 const About = () => {
     return (
@@ -31,7 +32,19 @@ const About = () => {
                     <h2 className={style.header_partners}>Наши партнеры</h2>
                 </Col>
 
-                <Partners />
+            <Row justify={'center'}>
+                <Col xs={22} lg={20}>
+                    <div className={style.grid}>
+                        <Image unoptimized  className={style.image} src={test} alt="" />
+                        <Image unoptimized  className={style.image} src={test} alt="" />
+                        <Image unoptimized className={style.image} src={test} alt="" />
+                        <Image unoptimized className={style.image} src={test} alt="" />
+                        <Image unoptimized className={style.image} src={test} alt="" />
+                        <Image unoptimized className={style.image} src={test} alt="" />
+                        <Image unoptimized className={style.image} src={test} alt="" />
+                    </div>
+                </Col>
+            </Row>
                 <PortfolioMain />
             </Row>
 

@@ -41,7 +41,7 @@ const Footer = () => {
                             <div className={style.contact_info_links} >
                                 <Link className={style.contact_link} href="tel:88432777633">
                                     <AiFillPhone style={{ marginRight: 10 }} />
-                                    8 (843) 277-76-33
+                                    +7 (843) 277-76-33
                                 </Link>
                                 <Link className={style.contact_link} href="mailto:1@gbkzn.ru">
                                     <MdEmail style={{ marginRight: 10 }} />
