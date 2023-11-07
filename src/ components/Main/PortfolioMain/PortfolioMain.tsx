@@ -77,7 +77,7 @@ const PortfolioMain = ({response}:any) => {
 
             )
             }
-            <Link type="link" className={style.portfolio_link} href="/portfolio">Смотреть все работы <RightOutlined /></Link>
+            {/* <Link type="link" className={style.portfolio_link} href="/portfolio">Смотреть все работы <RightOutlined /></Link> */}
         </div>
     )
 }

@@ -50,14 +50,14 @@ const Menu = () => {
         </Link>
       ),
     },
-    {
-      key: '2',
-      label: (
-        <Link className={style.links} href="/portfolio">
-          Портфолио
-        </Link>
-      ),
-    },
+    // {
+    //   key: '2',
+    //   label: (
+    //     <Link className={style.links} href="/portfolio">
+    //       Портфолио
+    //     </Link>
+    //   ),
+    // },
     {
       key: '3',
       label: (
@@ -84,14 +84,6 @@ const Menu = () => {
     },
     {
       key: '6',
-      label: (
-        <Link className={style.links} href="/glossary">
-          Словарь
-        </Link>
-      ),
-    },
-    {
-      key: '7',
       label: (
         <Link className={style.links} href="/glossary">
           Словарь

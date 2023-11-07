@@ -100,7 +100,7 @@ const Product = ({ data }:any) => {
                         </div>
                     </div>
 
-                    <PrimaryHeader className={style.blue_header} header="Модели товара" />
+                    {/* <PrimaryHeader className={style.blue_header} header="Модели товара" />
                     <div className={style.product_contents}>
 
                         {
@@ -117,7 +117,7 @@ const Product = ({ data }:any) => {
                             ))}
 
 
-                    </div>
+                    </div> */}
 
                     <div className={style.feedback}>
                         <p>

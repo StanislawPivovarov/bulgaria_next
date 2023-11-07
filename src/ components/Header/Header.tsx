@@ -63,7 +63,7 @@ const Header = () => {
                     <Link onClick={()=> setOpen(false)} href="/search" type="link">Поиск</Link>
                     <Divider style={{ background: "transparent", margin: "8px 0" }} />
                     <Link onClick={()=> setOpen(false)} href="/sales" type="link">Акции</Link>
-                    <Link onClick={()=> setOpen(false)} href="/portfolio" type="link">Портфолио</Link>
+                    {/* <Link onClick={()=> setOpen(false)} href="/portfolio" type="link">Портфолио</Link> */}
                     <Link onClick={()=> setOpen(false)} href="/reviews" type="link">Отзывы</Link>
                     <Link onClick={()=> setOpen(false)} href="/about" type="link">О нас</Link>
                     <Link onClick={()=> setOpen(false)} href="/contacts" type="link">Контакты</Link>
