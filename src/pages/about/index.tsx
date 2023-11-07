@@ -45,7 +45,7 @@ const About = () => {
                     </div>
                 </Col>
             </Row>
-                <PortfolioMain />
+                {/* <PortfolioMain /> */}
             </Row>
 
         </div>

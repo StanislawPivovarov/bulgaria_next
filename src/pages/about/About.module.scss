@@ -4,14 +4,15 @@
 
 .grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     grid-column-gap: 24px;
-    grid-row-gap: 16px;
+    grid-row-gap: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     align-items: center;
     justify-content: center;
     justify-items: center;
+
     @media(min-width: 992px) {
         grid-template-columns: auto auto auto auto;
         grid-column-gap: 32px;
@@ -19,6 +20,13 @@
         margin-top: 50px;
     }
 
+}
+
+.image {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
 }
 
 .header {

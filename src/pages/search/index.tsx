@@ -6,22 +6,6 @@ import SearchComponent from "@/ components/SearchComponent";
 import axios from "axios";
 
 const Search = ({ data }: any) => {
-  // const [data, setData] = useState<any[]>([]);
-
-  // useEffect(() => {
-  //     const fetchData = async () => {
-  //         try {
-  //             const data = await getCategories();
-  //             setData(data);
-  //         } catch (error) {
-
-  //         }
-  //     };
-
-  //     fetchData();
-  // }, [setData]);
-  
-  // console.log('fefe', data)
   return (
     <div className={style.back}>
       <Row justify={"center"}>

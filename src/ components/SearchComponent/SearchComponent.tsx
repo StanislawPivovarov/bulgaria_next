@@ -79,11 +79,11 @@ const SearchComponent = ({ dataFromApi }: any) => {
                 <ul className={style.results_ul}>
                     {searchResults.map((result: any, index: React.Key | null | undefined) => (
                         <li className={style.results_list} key={index}>
-                            <Button type='link' className={style.button} href={`/${result.id}`}>
+                            <Link className={style.button} href={`/${result.id}`}>
                                 <div>
                                     <p className={style.result_header}>{result.attributes.name}</p>
                                 </div>
-                            </Button>
+                            </Link>
                             <p className={style.result_content}>{result.attributes.description}</p>
                         </li>
                     ))}

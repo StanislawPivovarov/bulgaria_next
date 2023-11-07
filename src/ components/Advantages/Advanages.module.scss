@@ -9,6 +9,10 @@
 
 
 .wrapper img{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: auto;
     @media(min-width: 992px) {
         max-width: 852px;
         height: auto;

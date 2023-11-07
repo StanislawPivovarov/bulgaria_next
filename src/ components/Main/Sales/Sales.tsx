@@ -7,6 +7,7 @@ import Label from "../Label";
 import card from '../../../assets/Визитки.png'
 import { RightOutlined } from "@ant-design/icons";
 import Image from "next/image";
+import Link from "next/link";
 
 const Sales = () => {
     return (
@@ -34,8 +35,11 @@ const Sales = () => {
                                 </div>
                                 <div className={style.button_group}>
                                
-                                <Button href="/sales" className={style.more_sales} type="default">Все акции <RightOutlined className={style.more_sales_logo}/></Button>
-
+                                <Button  className={style.more_sales} type="default">
+                                    <Link href="/sales">
+                                    Все акции <RightOutlined className={style.more_sales_logo}/>
+                                    </Link>
+                                    </Button>
                                 </div>
                              
                             </Col>

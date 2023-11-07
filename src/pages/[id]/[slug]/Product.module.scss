@@ -24,6 +24,7 @@
 .cover {
     width: 100%;
     height: auto;
+    object-fit: cover;
 
     @media(min-width: 992px) {
         width: 428px;
