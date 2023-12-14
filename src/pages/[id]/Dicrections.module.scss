@@ -55,7 +55,7 @@
     margin-top: 16px;
     box-shadow: 7px 8px 0px 5px rgba(238, 119, 28, 1);
     padding-bottom: 20px;
-    transform: skew(-3deg, 0deg);
+    // transform: skew(-3deg, 0deg);
     padding: 10px;
     margin-bottom: 60px;
     height: fit-content;
@@ -70,7 +70,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    transform: skew(3deg, 0deg);
+    // transform: skew(3deg, 0deg);
     margin-right: 10px;
     margin-left: 10px;
 
@@ -79,6 +79,29 @@
 
     }
 }
+
+.markdown h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.markdown h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.markdown ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.markdown ol {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
 
 .products {
     display: grid;

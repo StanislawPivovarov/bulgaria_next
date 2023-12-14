@@ -8,7 +8,7 @@ const getCategories = async () => {
     try {
         // console.log(process.env.REACT_APP_STRAPI)
         const result = await axios.get(`http://localhost:1337/api/categories?populate=*`);
-        console.log(result.data.data);
+        // console.log(result.data.data);
 
 
         return result.data.data;

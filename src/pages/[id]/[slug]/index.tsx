@@ -28,7 +28,7 @@ const Product = ({ data }:any) => {
     return <div>Loading...</div>;
   }
 
-  console.log(data)
+  // console.log(data)
 
   return (
     <>
@@ -37,12 +37,12 @@ const Product = ({ data }:any) => {
         <Row justify={'center'} style={{ paddingBottom: 50 }}>
             <Col xs={24} lg={20}>
                 <div className={style.content}>
-                    <h2 className={style.header}>{data.name}</h2>
+                    <h2 className={style.header}>{data?.name}</h2>
                     <div className={style.head_content}>
                         <Image width={500} height={500} className={style.cover} src={product} alt="" />
                         <div className={style.description}>
                             <Markdown>
-                                {data.description}
+                                {data?.description}
                             </Markdown>
                         </div>
                     </div>
@@ -87,16 +87,14 @@ const Product = ({ data }:any) => {
                         <div className={style.player}>
 
                             <ReactPlayer
-                                url={data.video}
+                                url={data?.video}
                                 width={"100%"}
                                 height={"100%"}
                             />
                         </div>
 
                         <div className={style.video_description}>
-                            <p>Любой организации необходимы печати и штампы, которыми будет заверяться вся документации компании. В зависимости от активности работ, даннымы, юридически заверенными атрибутами, пользуются почти каждый день! Поэтому печать является обязательным элементом каждого предприятия.</p>
-                            <p>Среди печатей существуют гербовые, рельефные печати или штампы, печати с логотипами и реквизитами компаний и другими элементами для защиты документации. Кроме того, мы производим изготовление печатей, использующих особые чернила. Благодаря этому, печати можно ставить на таких материалах как пластик, стекло или металл. Также существуют чернила, видимые исключительно под ультрафиолетовыми лучами.</p>
-                            <p>Любой организации необходимы печати и штампы, которыми будет заверяться вся документации компании. В зависимости от активности работ, даннымы, юридически заверенными атрибутами, пользуются почти каждый день! Поэтому печать является обязательным элементом каждого предприятия.</p>
+                          <Markdown>{data?.video_description}</Markdown>
                         </div>
                     </div>
 
@@ -150,13 +148,13 @@ export async function getStaticPaths() {
         })),
       ];
     });
-    console.log(paths)
+    // console.log(paths)
     return {
       paths,
       fallback: true,
     };
   } catch (error) {
-    console.error("Error in getStaticPaths:", error);
+    // console.error("Error in getStaticPaths:", error);
     throw error;
   }
 }
@@ -165,7 +163,7 @@ export async function getStaticProps({ params }: any) {
   try {
     const { slug } = params;
     const response = await axios.get(`http://127.0.0.1:1337/api/product-categories/${slug}/?populate=*`);
-    console.log(response.data)
+    // console.log(response.data)
     return {
       props: {
         data: response.data.data.attributes,

@@ -95,7 +95,7 @@ const Menu = () => {
   return (
     <div className={style.menu}>
       <Row style={{ height: "100%" }} justify={'center'}>
-        <Col xs={23} lg={20}>
+        <Col xs={23} lg={23}>
           <div className={style.button_container}>
             <Dropdown overlayStyle={{ borderRadius: 0 }} menu={{ items }}>
               <Button className={style.button} type="link">
@@ -110,7 +110,7 @@ const Menu = () => {
                   return {
                     key: item.id,
                     label: (
-                      <Link href={`/${items.id}/${item.id}`} className={style.links}>
+                      <Link href={`/${items.id}/${item.id}`} className={style.main_buttons}>
                         {item.attributes.name}
                       </Link>
                     ),

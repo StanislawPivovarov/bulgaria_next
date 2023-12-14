@@ -14,7 +14,7 @@ import axios from 'axios'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({data, portfolio}:any) {
-  console.log(data)
+  // console.log(data)
   return (
     <ConfigProvider
       theme={{

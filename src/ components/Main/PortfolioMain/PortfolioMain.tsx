@@ -74,10 +74,9 @@ const PortfolioMain = ({response}:any) => {
                     open={isModalOpen}
                     onOk={handleOk}
                     onCancel={handleCancel} />
-
             )
             }
-            
+
             {/* <Link type="link" className={style.portfolio_link} href="/portfolio">Смотреть все работы <RightOutlined /></Link> */}
         </div>
     )

@@ -20,31 +20,6 @@ import Footer from "@/ components/Footer";
 import Menu from "@/ components/Menu";
 
 const Directions = ({data}:any) => {
-    // const [loading, setLoading] = useState(true);
-    // const param = useParams();
-    // const id = param?.id
-
-    // const [data, setData] = useState<any>(null);
-
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await getCategoriesByLink(id);
-    //             setData(response.attributes);
-
-    //         } catch (error) {
-
-    //         }
-    //     };
-
-    //     fetchData();
-    // }, [id]);
-
-    // console.log("shit", data)
-
-
-    console.log(data)
 
     return (
         <div className={style.back}>
