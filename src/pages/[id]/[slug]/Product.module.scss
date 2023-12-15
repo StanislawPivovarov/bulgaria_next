@@ -64,8 +64,28 @@
     }
 }
 
+.description ul {
+    text-align: left;
+    margin-top: 10px;
+    color: #244360;
+    font-family: CenturyGothic;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transform: skew(3deg, 0deg);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left: 20px;
+
+    @media (min-width: 992px) {
+        font-size: 20px;
+
+    }
+}
+
 .description :first-child {
-    font-family: CenturyGothic Bold;
+    font-family: CenturyGothic;
 }
 
 .blue_header {
@@ -93,9 +113,10 @@
     aspect-ratio: 1;
     object-fit: cover;
     scale: 1;
+
     @media (min-width: 992px) {
         border-radius: 10px;
-        
+
     }
 }
 
@@ -106,6 +127,7 @@
 .mini {
     display: flex;
     flex-direction: column;
+
     @media(min-width: 992px) {
         row-gap: 36px;
     }
@@ -114,6 +136,7 @@
 .first {
     display: grid;
     grid-template-columns: auto auto;
+
     @media(min-width: 992px) {
         row-gap: 36px;
         column-gap: 36px;
@@ -130,6 +153,7 @@
     grid-template-columns: 100%;
     column-gap: 0;
     margin-bottom: 20px;
+
     @media(min-width: 992px) {
         grid-template-columns: 50% 50%;
         column-gap: 36px;
@@ -146,6 +170,7 @@
     position: relative;
     row-gap: 0;
     column-gap: 0;
+
     @media (min-width: 992px) {
         grid-template-columns: 16.7% 16.7% 16.7% 16.7% 16.7% 16.7%;
         row-gap: 36px;
@@ -167,6 +192,7 @@
     z-index: 10;
     aspect-ratio: 16/9;
     position: relative;
+
     @media(min-width: 992px) {
         width: 543px;
         height: 305px;
@@ -187,6 +213,7 @@
     position: relative;
     z-index: 9;
     margin-left: 10px;
+
     @media(min-width: 992px) {
         width: 70%;
         padding: 16px 36px 16px 16px;
@@ -194,6 +221,39 @@
         margin-bottom: 60px;
     }
 }
+
+.video_description ul {
+    text-align: left;
+    margin-top: 10px;
+    color: #244360;
+    font-family: CenturyGothic;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left: 20px;
+
+    @media (min-width: 992px) {
+        font-size: 20px;
+
+    }
+}
+
+.video_description h3 {
+    color: #244360;
+    font-family: CenturyGothic;
+}
+
+.video_description h4 {
+    color: #244360;
+    font-family: CenturyGothic Bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
 
 .video_description p {
     text-align: left;
@@ -225,7 +285,7 @@
     line-height: normal;
     margin-right: 10px;
     margin-left: 10px;
-    
+
 
     @media (min-width: 992px) {
         font-size: 1.5em;
@@ -242,6 +302,7 @@
     margin-right: 10px;
     margin-left: 10px;
 }
+
 .product_name {
     font-family: CenturyGothic;
     font-size: 18px;
@@ -299,16 +360,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
     @media (min-width:992px) {
         font-size: 24px;
         margin-bottom: 20px;
     }
-
-}
-
-.main_buttons {
-    font-size: 20px;
-    font-family: CenturyGothic;
 
 }
 
@@ -322,17 +378,18 @@
 }
 
 .recommendations {
-    color:#244360;
-text-align: center;
-font-family: Bebas Neue Regular;
-font-size: 28px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-transform: uppercase;
+    color: #244360;
+    text-align: center;
+    font-family: Bebas Neue Regular;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
-.products, .product_contents {
+.products,
+.product_contents {
     display: grid;
     grid-template-columns: 100%;
     width: min-content;
@@ -367,6 +424,7 @@ text-transform: uppercase;
 .head_content {
     display: flex;
     flex-direction: column;
+
     @media(min-width: 992px) {
         flex-direction: row-reverse;
         align-items: center;
@@ -394,6 +452,7 @@ text-transform: uppercase;
     display: flex;
     align-items: center;
     background-color: #ee771c !important;
+
     @media(min-width: 992px) {
         font-size: 20px;
     }

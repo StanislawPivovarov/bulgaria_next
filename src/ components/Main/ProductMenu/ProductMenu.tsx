@@ -8,7 +8,7 @@ const ProductMenu = ({fetchedData}:any) => {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState();
     const [isData, setIsData] = useState<any>([]);
-    const [activeButton, setActiveButton] = useState(0); // Изменено: начальная активная кнопка - ни одна
+    const [activeButton, setActiveButton] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,7 +16,6 @@ const ProductMenu = ({fetchedData}:any) => {
                 setData(fetchedData);
                 setIsData(getRandomCards(fetchedData));
             } catch (error) {
-                // Обработка ошибок
             } finally {
                 setLoading(false);
             }
@@ -44,7 +43,7 @@ const ProductMenu = ({fetchedData}:any) => {
             setIsData(data[buttonNumber - 1]?.attributes.product_categories.data || []);
             setActiveButton(buttonNumber);
         } else {
-            setIsData(getRandomCards(data, 6)); // Изменено: отображение рандомных 6 карточек
+            setIsData(getRandomCards(data, 6))
             setActiveButton(0);
         }
     };
@@ -52,8 +51,6 @@ const ProductMenu = ({fetchedData}:any) => {
     if (isLoading) {
         return <Spin />;
     }
-
-    // console.log(isData)
     return (
         <div className={style.back}>
             <Row justify={'center'}>

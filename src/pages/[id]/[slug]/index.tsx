@@ -28,7 +28,6 @@ const Product = ({ data }:any) => {
     return <div>Loading...</div>;
   }
 
-  // console.log(data)
 
   return (
     <>
@@ -82,7 +81,7 @@ const Product = ({ data }:any) => {
 
                     <PrimaryHeader className={style.blue_header} header="Преимущества" />
                     <Advantages />
-                    <PrimaryHeader className={style.blue_header} header="Особенности производства" />
+                    <PrimaryHeader className={style.blue_header} header="Особенности производства" /> 
                     <div className={style.video_content}>
                         <div className={style.player}>
 
@@ -148,13 +147,11 @@ export async function getStaticPaths() {
         })),
       ];
     });
-    // console.log(paths)
     return {
       paths,
       fallback: true,
     };
   } catch (error) {
-    // console.error("Error in getStaticPaths:", error);
     throw error;
   }
 }
@@ -163,7 +160,6 @@ export async function getStaticProps({ params }: any) {
   try {
     const { slug } = params;
     const response = await axios.get(`http://127.0.0.1:1337/api/product-categories/${slug}/?populate=*`);
-    // console.log(response.data)
     return {
       props: {
         data: response.data.data.attributes,

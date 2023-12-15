@@ -105,7 +105,6 @@ const Menu = () => {
 
             {
               menu.map((items) => {
-                // console.log(items)
                 const menuItems: MenuProps['items'] = items.attributes.product_categories.data.map((item: any) => {
                   return {
                     key: item.id,
@@ -117,7 +116,6 @@ const Menu = () => {
                   }
 
                 }
-
 
                 )
                 return (
@@ -133,7 +131,6 @@ const Menu = () => {
               <SearchOutlined />
               Поиск</Link>
           </div>
-
         </Col>
       </Row>
 
@@ -142,14 +139,3 @@ const Menu = () => {
 }
 
 export default Menu;
-
-
-// export async function getStaticProps() {
-//   const response = await axios.get(`http://127.0.0.1:1337/api/categories/?populate=*`);
-//   console.log(response.data.data)
-//   return {
-//     props: {
-//       data: response.data
-//     },
-//   };
-// }

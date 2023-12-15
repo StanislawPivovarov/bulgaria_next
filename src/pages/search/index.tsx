@@ -23,7 +23,6 @@ export default Search;
 
 export async function getStaticProps() {
   const response = await axios.get(`http://127.0.0.1:1337/api/categories/?populate=*`);
-  // console.log(response.data.data)
   return {
     props: {
       data: response.data

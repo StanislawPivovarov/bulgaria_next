@@ -10,7 +10,6 @@ import axios from "axios";
 const Portfolio = ({data}:any) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-    // const [data, setData] = useState<any>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [modalData, setModalData] = useState<any>(null);
 
@@ -26,23 +25,6 @@ const Portfolio = ({data}:any) => {
         setIsModalOpen(false);
     };
 
-    // console.log(modalData)
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await getPortfolio();
-    //             setData(response);
-
-    //         } catch (error) {
-
-    //         } finally {
-    //             setIsLoading(false)
-    //         }
-
-    //     };
-
-    //     fetchData();
-    // }, []);
     if (isLoading) {
         return <p>Loading</p>
     }
@@ -116,7 +98,6 @@ export default Portfolio;
 
 export async function getStaticProps() {
     const response = await axios.get(`http://127.0.0.1:1337/api/portfolios?populate[product_category][populate][0]=direction`);
-    // console.log(response.data.data)
     return {
       props: {
         data: response.data.data

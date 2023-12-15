@@ -84,10 +84,8 @@ export async function getStaticPaths() {
       const result = fetch.data;
 
       const paths = result.data.map((res: { id: any }) => ({
-        params: { id: res.id.toString() },  // <-- Add parentheses here
+        params: { id: res.id.toString() },
       }));
-      // console.log("fffff",paths)
-      // Возвращаем массив путей и опцию fallback
       return {
         paths,
         fallback: true,
@@ -99,11 +97,9 @@ export async function getStaticPaths() {
   }
 
   
-  // Эта функция будет вызвана для каждого пути, указанного в getStaticPaths
   export async function getStaticProps({ params }: any) {
     try {
       const { id } = params;
-      // console.log(params)
     
       // Получите данные для конкретного направления
       const response = await axios.get(`http://127.0.0.1:1337/api/categories/${id}/?populate=*`);

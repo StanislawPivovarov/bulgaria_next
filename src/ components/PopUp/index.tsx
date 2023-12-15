@@ -15,7 +15,6 @@ const PopUp = (props:any) => {
     else (
         close = false
     )
-    // console.log(close)
 
     return (
         <div>
