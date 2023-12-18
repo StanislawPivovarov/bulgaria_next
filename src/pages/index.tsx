@@ -15,6 +15,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({data, portfolio}:any) {
   return (
+    <>
+    <Head>
+    <title>Графика Булгария</title>
+</Head>
     <ConfigProvider
       theme={{
         token: {
@@ -31,6 +35,7 @@ export default function Home({data, portfolio}:any) {
         <Reviews />
       </StyleProvider>
     </ConfigProvider>
+    </>
   )
 }
 

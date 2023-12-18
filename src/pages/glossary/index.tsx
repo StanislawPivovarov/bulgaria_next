@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Col, Modal, Row } from 'antd';
 import style from './Dictionary.module.scss'
+import Head from 'next/head';
 
 interface WordData {
   word: string;
@@ -38,6 +39,10 @@ const AllWordsDictionary: React.FC<AllWordsDictionaryProps> = ({ data }) => {
   const sortedLetters = Object.keys(wordsByLetter).sort(collator.compare);
 
   return (
+    <>
+    <Head>
+ <title>Словарь</title>
+</Head>
     <div className={style.back}>
       <Row justify="center">
         <Col xs={20} lg={20}>
@@ -71,6 +76,7 @@ const AllWordsDictionary: React.FC<AllWordsDictionaryProps> = ({ data }) => {
         </Col>
       </Row>
     </div>
+    </>
   );
 };
 

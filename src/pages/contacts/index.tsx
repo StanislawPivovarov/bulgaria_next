@@ -7,6 +7,7 @@ import instagram from '../../assets/contacts/instagram.svg'
 import vk from '../../assets/contacts/vk.svg'
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import Image from "next/image";
+import Head from "next/head";
 
 const Contacts = () => {
 
@@ -46,6 +47,10 @@ const Contacts = () => {
         }
     
     return (
+        <>
+           <Head>
+        <title>Контакты</title>
+    </Head>
         <div className={style.contacts}>
             <div className={style.contacts_content}>
                 <h2 className={style.contacts_content_header}>Контактная информация</h2>
@@ -85,6 +90,8 @@ const Contacts = () => {
             </YMaps>
 
         </div>
+        </>
+     
     )
 }
 

@@ -4,9 +4,14 @@ import style from './Search.module.scss'
 import { Row, Col } from "antd";
 import SearchComponent from "@/ components/SearchComponent";
 import axios from "axios";
+import Head from "next/head";
 
 const Search = ({ data }: any) => {
   return (
+    <>
+    <Head>
+    <title>Поиск</title>
+</Head>
     <div className={style.back}>
       <Row justify={"center"}>
         <Col xs={23} lg={20}>
@@ -16,6 +21,7 @@ const Search = ({ data }: any) => {
       </Row>
 
     </div>
+    </>
   )
 }
 

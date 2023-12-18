@@ -4,10 +4,15 @@ import { Row, Col } from "antd";
 import style from './ClientReviews.module.scss'
 import Review from "@/ components/Main/Review";
 import Image from "next/image";
+import Head from "next/head";
 
 const ClientReviews = () => {
     return (
         <>
+
+            <Head>
+                <title>Отзывы</title>
+            </Head>
             <div className={style.back}>
                 <Row justify={'center'}>
                     <Col xs={23} lg={20}>

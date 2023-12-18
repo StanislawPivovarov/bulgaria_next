@@ -15,6 +15,7 @@ import getProductsByLink from "@/api/getProductsByLink/getProductsByLink";
 import getCategories from "@/api/getCategories/getCategories";
 import { useRouter } from "next/router";
 import axios from "axios";
+import Head from "next/head";
 
 
 const Product = ({ data }:any) => {
@@ -31,6 +32,10 @@ const Product = ({ data }:any) => {
 
   return (
     <>
+          <Head>
+        <title>{data?.name}</title>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </Head>
     <div className={style.back}>
         <Image width={500} height={500} src={back} className={style.back_img} alt="" />
         <Row justify={'center'} style={{ paddingBottom: 50 }}>
