@@ -14,7 +14,7 @@ const nextConfig = {
 
   env: {
     STRAPI_API: process.env.STRAPI_API,
-    
+
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
@@ -25,16 +25,16 @@ const nextConfig = {
     "path": false,
   },
   future: {
-    webpack5: true,   
+    webpack5: true,
   },
 
   webpack(config) {
     config.resolve.fallback = {
-      ...config.resolve.fallback,  
+      ...config.resolve.fallback,
 
       fs: false,
     };
-    
+
     return config;
   },
 }

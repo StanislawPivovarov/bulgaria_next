@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import style from './Dicrections.module.scss'
 import back from '../../assets/background/427d5d07b90ff63bded756568f027851.png'
-import { Button, Col, Row } from "antd";
+import { Button, Col, Menu, Row } from "antd";
 import cover from '../../assets/directions/Frame 34189.png'
 import tech from '../../assets/directions/Frame-Е.png'
 import getCategoriesByLink from "../../api/getGategoriesByLink/getGategoriesByLink";
@@ -16,8 +16,6 @@ import PrimaryHeader from "@/ components/PrimaryHeader";
 import PortfolioCarousel from "@/ components/PortfolioCarousel";
 import getCategories from "@/api/getCategories/getCategories";
 import axios from "axios";
-import Footer from "@/ components/Footer";
-import Menu from "@/ components/Menu";
 import Head from "next/head";
 
 const Directions = ({ data }: any) => {
@@ -60,9 +58,9 @@ const Directions = ({ data }: any) => {
                 {
                   data?.attributes.product_categories?.data.map((item: {
                     id: any;
-                    attributes: { name: any; description: any };
+                    attributes: any;
                   }): any => (
-                    <Link key={item.id} className={style.button_to} href={`/${data.id}/${item.id}`}>
+                    <Link key={item.id} className={style.button_to} href={`/${data.attributes.link}/${item.attributes.slug}`}>
                       <ProductCard
                         name={item?.attributes?.name}
                         description={item?.attributes?.description}
@@ -86,39 +84,41 @@ const Directions = ({ data }: any) => {
 export default Directions;
 
 export async function getStaticPaths() {
-  try {
-    const fetch = await axios.get(`http://127.0.0.1:1337/api/categories?populate=*`);
-    const result = fetch.data;
+  const res = await axios.get(`http://127.0.0.1:1337/api/categories?populate=*`);
+  const categories = res.data.data;
 
-    const paths = result.data.map((res: { id: any }) => ({
-      params: { id: res.id.toString() },
-    }));
-    return {
-      paths,
-      fallback: true,
-    };
-  } catch (error) {
-    console.error("Error in getStaticPaths:", error);
-    throw error;
-  }
+  const paths = categories.map((cat: any) => ({
+    params: { slug: cat.attributes.link },
+  }));
+
+  return {
+    paths,
+    fallback: true, // или false
+  };
 }
 
 
 export async function getStaticProps({ params }: any) {
+  const { slug } = params;
+
   try {
-    const { id } = params;
+    const res = await axios.get(
+      `http://127.0.0.1:1337/api/categories?filters[link][$eq]=${slug}&populate=*`
+    );
 
-    // Получите данные для конкретного направления
-    const response = await axios.get(`http://127.0.0.1:1337/api/categories/${id}/?populate=*`);
+    const category = res.data.data[0];
 
-    // Возвращаем данные как props для компонента Directions
+    if (!category) {
+      return { notFound: true };
+    }
+
     return {
       props: {
-        data: response.data.data  // <-- Access response.data
+        data: category, // содержит id и attributes
       },
     };
   } catch (error) {
     console.error("Error in getStaticProps:", error);
-    throw error;
+    return { notFound: true };
   }
 }

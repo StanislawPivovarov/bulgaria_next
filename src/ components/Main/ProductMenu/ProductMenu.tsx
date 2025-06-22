@@ -4,7 +4,7 @@ import { Button, Col, Row, Spin } from "antd";
 import ProductCard from "../ProductCard";
 import getCategories from "../../../api/getCategories/getCategories";
 
-const ProductMenu = ({fetchedData}:any) => {
+const ProductMenu = ({ fetchedData }: any) => {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState();
     const [isData, setIsData] = useState<any>([]);
@@ -39,7 +39,7 @@ const ProductMenu = ({fetchedData}:any) => {
 
     const showData = (buttonNumber: any) => {
         if (data && data[buttonNumber - 1]) {
-        //@ts-ignore
+            //@ts-ignore
             setIsData(data[buttonNumber - 1]?.attributes.product_categories.data || []);
             setActiveButton(buttonNumber);
         } else {
@@ -96,7 +96,7 @@ const ProductMenu = ({fetchedData}:any) => {
 
                     <div className={style.cards}>
                         {isData.map((item: any) => (
-                            <ProductCard key={item.id} name={item.attributes.name} description={item.attributes.description} />
+                            <ProductCard data={item} key={item.id} name={item.attributes.name} description={item.attributes.description} />
                         ))}
                     </div>
                 </Col>

@@ -15,6 +15,7 @@ const PortfolioMain = ({response}:any) => {
     const [data, setData] = useState<any>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [modalData, setModalData] = useState<any>(null);
+
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -40,7 +41,8 @@ const PortfolioMain = ({response}:any) => {
 
         };
         fetchData();
-    }, []);
+    }, [response]);
+
     if (isLoading) {
         return <p>Loading</p>
     }
@@ -67,10 +69,10 @@ const PortfolioMain = ({response}:any) => {
                     header={modalData.attributes.name}
                     image={modalData.attributes.image}
                     description={modalData.attributes.description}
-                    slug={modalData.attributes.product_category.data.id}
+                     slug={modalData.attributes.product_category.data.attributes}
                     category={modalData.attributes.product_category.data.attributes.name}
-                    category_id={modalData.attributes.product_category.data.attributes.direction.data.id}
-                    product_category_id={modalData.attributes.product_category.data.id}
+                                      category_id={modalData.attributes.product_category.data.attributes.direction.data.attributes.link}
+                    product_category_id={modalData.attributes.product_category.data.attributes.slug}
                     open={isModalOpen}
                     onOk={handleOk}
                     onCancel={handleCancel} />

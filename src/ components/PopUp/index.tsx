@@ -5,11 +5,11 @@ import style from './PopUp.module.scss'
 import Image from "next/image";
 import { ExportOutlined } from "@ant-design/icons";
 
-const PopUp = (props:any) => {
+const PopUp = (props: any) => {
 
     const width = window.innerWidth
     var close
-    if (width > 992){
+    if (width > 992) {
         close = true
     }
     else (
@@ -18,9 +18,9 @@ const PopUp = (props:any) => {
 
     return (
         <div>
-            
+
             <Modal centered className={style.popup} footer={false} open={props.open} onOk={props.onOk} closable={close} onCancel={props.onCancel}>
-                <Image width={500} height={500}  src={props.image} className={style.image} alt="" />
+                <Image width={500} height={500} src={props.image} className={style.image} alt="" />
                 <div className={style.popup_content}>
                     <h1>{props.header}</h1>
                     <p className={style.description}>{props.description}</p>

@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
 import style from './Menu.module.scss'
 import { Button, Col, Dropdown, Input, MenuProps, Row, Menu as Menue } from "antd";
@@ -15,31 +17,14 @@ const Menu = () => {
   const [open, setOpen] = useState(false);
 
   const showSearch = () => {
-      setOpen(true);
+    setOpen(true);
   };
 
   const onClose = () => {
-      setOpen(false);
+    setOpen(false);
   };
 
 
-
-  // const [menu, setMenu] = useState<any[]>([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const data = await getCategories();
-  //       setMenu(data);
-  //     } catch (error) {
-
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [setMenu]);
-
-  
 
   const items: MenuProps['items'] = [
     {
@@ -50,14 +35,14 @@ const Menu = () => {
         </Link>
       ),
     },
-    // {
-    //   key: '2',
-    //   label: (
-    //     <Link className={style.links} href="/portfolio">
-    //       Портфолио
-    //     </Link>
-    //   ),
-    // },
+    {
+      key: '2',
+      label: (
+        <Link className={style.links} href="/portfolio">
+          Портфолио
+        </Link>
+      ),
+    },
     {
       key: '3',
       label: (
@@ -105,11 +90,11 @@ const Menu = () => {
 
             {
               menu.map((items) => {
-                const menuItems: MenuProps['items'] = items.attributes.product_categories.data.map((item: any) => {
+                const menuItems: MenuProps['items'] = items?.attributes?.product_categories?.data.map((item: any) => {
                   return {
                     key: item.id,
                     label: (
-                      <Link href={`/${items.id}/${item.id}`} className={style.main_buttons}>
+                      <Link href={`/${items?.attributes?.link}/${item?.attributes?.slug}`} className={style.main_buttons}>
                         {item.attributes.name}
                       </Link>
                     ),
@@ -119,8 +104,8 @@ const Menu = () => {
 
                 )
                 return (
-                  <Dropdown key={items.id} menu={{ items: menuItems }}>
-                    <Link href={`/${items.id}`} className={style.button} type="link">{items.attributes.name}</Link>
+                  <Dropdown key={items?.attributes?.link} menu={{ items: menuItems }}>
+                    <Link href={`/${items?.attributes?.link}`} className={style.button} type="link">{items.attributes.name}</Link>
                   </Dropdown>
                 )
               }
