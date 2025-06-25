@@ -25,10 +25,17 @@ const ProductMenu = ({ fetchedData }: any) => {
     }, []);
 
     const getRandomCards = (categoriesData: any[] | undefined, count = 6) => {
-        //@ts-ignore
-        const allCards = categoriesData.flatMap(category => category.attributes.product_categories.data);
+        if (!categoriesData) return [];
+
+        // Собираем все карточки, добавляя родительскую категорию
+        const allCards = categoriesData.flatMap(category =>
+            (category.attributes.product_categories.data || []).map((card: any) => ({
+                ...card,
+                parentCategory: category.attributes
+            }))
+        );
+
         const randomCards = [];
-        //@ts-ignore
         while (randomCards.length < count && allCards.length > 0) {
             const randomIndex = Math.floor(Math.random() * allCards.length);
             randomCards.push(allCards.splice(randomIndex, 1)[0]);
@@ -40,7 +47,14 @@ const ProductMenu = ({ fetchedData }: any) => {
     const showData = (buttonNumber: any) => {
         if (data && data[buttonNumber - 1]) {
             //@ts-ignore
-            setIsData(data[buttonNumber - 1]?.attributes.product_categories.data || []);
+            setIsData(
+                //@ts-ignore
+                (data[buttonNumber - 1]?.attributes.product_categories.data || []).map((card: any) => ({
+                    ...card,
+                    //@ts-ignore
+                    parentCategory: data[buttonNumber - 1]?.attributes
+                }))
+            );
             setActiveButton(buttonNumber);
         } else {
             setIsData(getRandomCards(data, 6))
@@ -95,9 +109,11 @@ const ProductMenu = ({ fetchedData }: any) => {
                     </div>
 
                     <div className={style.cards}>
-                        {isData.map((item: any) => (
-                            <ProductCard data={item} key={item.id} name={item.attributes.name} description={item.attributes.description} />
-                        ))}
+                        {isData.map((item: any) => {
+                            return (
+                                <ProductCard data={item} key={item.id} name={item.attributes.name} description={item.attributes.description} link={`${item?.parentCategory?.link}/${item?.attributes?.slug}`} />
+                            )
+                        })}
                     </div>
                 </Col>
             </Row>

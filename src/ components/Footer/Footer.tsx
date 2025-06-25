@@ -4,11 +4,12 @@ import { Row, Col, Divider } from "antd";
 import { AiFillPhone } from 'react-icons/ai'
 import { MdEmail } from 'react-icons/md'
 import { FaMapMarkerAlt } from 'react-icons/fa'
-import axios from "axios";
-import getCategories from "../../api/getCategories/getCategories";
 import Link from "next/link";
-import {menu} from '../../helpers/categories'
+import { menu } from '../../helpers/categories'
 const Footer = () => {
+
+    const currentYear = new Date().getFullYear();
+
 
     if (!!menu.length) {
 
@@ -52,7 +53,7 @@ const Footer = () => {
                                 </Link>
                             </div>
 
-                            <p className={style.copyright}>Графика Булгария © 2010 - 2023</p>
+                            <p className={style.copyright}>Графика Булгария © 2010 - {currentYear}</p>
                         </div>
                     </Col>
                 </Row>

@@ -65,6 +65,7 @@ const SearchComponent = ({ dataFromApi }: any) => {
         }
     }
 
+
     return (
         <div>
             <Input

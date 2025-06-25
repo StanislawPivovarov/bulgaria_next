@@ -19,7 +19,6 @@ import axios from "axios";
 import Head from "next/head";
 
 const Directions = ({ data }: any) => {
-
   return (
     <>
 
@@ -59,15 +58,17 @@ const Directions = ({ data }: any) => {
                   data?.attributes.product_categories?.data.map((item: {
                     id: any;
                     attributes: any;
-                  }): any => (
-                    <Link key={item.id} className={style.button_to} href={`/${data.attributes.link}/${item.attributes.slug}`}>
+                  }): any => {
+                    return (
                       <ProductCard
+                        key={data?.attributes?.link}
+                        link={`/${data?.attributes?.link}/${item?.attributes?.slug}`}
                         name={item?.attributes?.name}
                         description={item?.attributes?.description}
                       />
-                    </Link>
+                    )
 
-                  ))
+                  })
                 }
               </div>
             </div>

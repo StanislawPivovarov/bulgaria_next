@@ -14,6 +14,7 @@ import axios from 'axios'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({data, portfolio}:any) {
+
   return (
     <>
     <Head>
@@ -38,6 +39,7 @@ export default function Home({data, portfolio}:any) {
     </>
   )
 }
+
 
 export async function getStaticProps() {
   const response = await axios.get(`http://127.0.0.1:1337/api/categories/?populate=*`);

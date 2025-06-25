@@ -12,6 +12,7 @@
     display: grid;
     grid-template-columns: auto;
     grid-row-gap: 40px;
+
     @media(min-width: 992px) {
         grid-template-columns: auto auto auto auto;
         grid-row-gap: 40px;
@@ -27,6 +28,7 @@
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+
     @media(min-width: 992px) {
         font-size: 56px;
         margin-bottom: 32px;
@@ -44,6 +46,7 @@
     display: block;
     color: var(--Regal-Blue, #244360);
     margin-bottom: 10px;
+
     @media(max-width: 991px) {
         margin-right: auto;
         margin-left: auto;
@@ -67,14 +70,17 @@
     font-weight: 400;
     line-height: normal;
     margin-bottom: 10px;
+
     @media(max-width: 991px) {
         font-size: 14px;
 
     }
 }
+
 .word:last-child {
     margin-bottom: 0;
 }
+
 .modal_definition {
     padding: 40px;
 }
@@ -86,4 +92,14 @@
 
 .modal_definition p {
     font-size: 20px;
+}
+
+.link_item {
+    margin-top: 20px;
+}
+
+.item_btn {
+    border: 1px solid #EE771C;
+    border-radius: 100px;
+    color: #EE771C;
 }
